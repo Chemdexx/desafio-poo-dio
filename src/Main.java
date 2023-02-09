@@ -17,9 +17,19 @@ public class Main {
         curso2.setDescricao("descrição curso js");
         curso2.setCargaHoraria(4);
 
+        Curso curso3 = new Curso();
+        curso2.setTitulo("curso kotlin");
+        curso2.setDescricao("descrição curso kotlin");
+        curso2.setCargaHoraria(14);
+
         Mentoria mentoria = new Mentoria();
         mentoria.setTitulo("mentoria de java");
         mentoria.setDescricao("descrição mentoria java");
+        mentoria.setData(LocalDate.now());
+
+        Mentoria mentoria2 = new Mentoria();
+        mentoria.setTitulo("mentoria de kotlin");
+        mentoria.setDescricao("descrição mentoria kotlin");
         mentoria.setData(LocalDate.now());
 
         /*System.out.println(curso1);
@@ -31,7 +41,9 @@ public class Main {
         bootcamp.setDescricao("Descrição Bootcamp Java Developer");
         bootcamp.getConteudos().add(curso1);
         bootcamp.getConteudos().add(curso2);
+        bootcamp.getConteudos().add(curso3);
         bootcamp.getConteudos().add(mentoria);
+        bootcamp.getConteudos().add(mentoria2);
 
         Dev devCamila = new Dev();
         devCamila.setNome("Camila");
@@ -58,6 +70,20 @@ public class Main {
         System.out.println("Conteúdos Concluidos João:" + devJoao.getConteudosConcluidos());
         System.out.println("XP:" + devJoao.calcularTotalXp());
 
+        System.out.println("-------");
+
+        Dev devCarlos = new Dev();
+        devCarlos.setNome("Carlos");
+        devCarlos.inscreverBootcamp(bootcamp);
+        System.out.println("Conteúdos Inscritos Carlos:" + devCarlos.getConteudosInscritos());
+        devCarlos.progredir();
+        devCarlos.progredir();
+        devCarlos.progredir();
+        devCarlos.progredir();
+        System.out.println("-");
+        System.out.println("Conteúdos Inscritos Carlos:" + devCarlos.getConteudosInscritos());
+        System.out.println("Conteúdos Concluidos Carlos:" + devCarlos.getConteudosConcluidos());
+        System.out.println("XP:" + devCarlos.calcularTotalXp());
     }
 
 }
